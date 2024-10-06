@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    
+
+    <ul style="list-style-type: disc;" >
+        <li>WebAPIs</li>
+        <ul style="list-style-type: disc;" >
+            <li>Element</li>
+            <ul style="list-style-type: disc;" >
+                <li>Event</li>
+                <ul class="event" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;" >
+                    <li>afterscriptexecute</li>
+                    <li>animationcancel</li>
+                    <li>animationend</li>
+                    <li>animationiteration</li>
+                    <li>animationstart</li>
+                    <li>auxclick</li>
+                    <li>beforeinput</li>
+                    <li>beforematchExperimental</li>
+                    <li>beforescriptexecute</li>
+                    <li>beforexrselectExperimental</li>
+                    <li>blur</li>
+                    <li>click</li>
+                    <li>compositionend</li>
+                    <li>compositionstart</li>
+                    <li>compositionupdate</li>
+                    <li>contentvisibilityautostatechange</li>
+                    <li>contextmenu</li>
+                    <li>copy</li>
+                    <li>cut</li>
+                    <li>dblclick</li>
+                    <li>DOMActivate</li>
+                    <li>DOMMouseScroll</li>
+                    <li>focus</li>
+                    <li>focusin</li>
+                    <li>focusout</li>
+                    <li>fullscreenchange</li>
+                    <li>fullscreenerror</li>
+                    <li>gesturechange</li>
+                    <li>gestureend</li>
+                    <li>gesturestart</li>
+                    <li>gotpointercapture</li>
+                    <li>input</li>
+                    <li>keydown</li>
+                    <li>keypress</li>
+                    <li>keyup</li>
+                    <li>lostpointercapture</li>
+                    <li>mousedown</li>
+                    <li>mouseenter</li>
+                    <li>mouseleave</li>
+                    <li>mousemove</li>
+                    <li>mouseout</li>
+                    <li>mouseover</li>
+                    <li>mouseup</li>
+                    <li>mousewheel</li>
+                    <li>MozMousePixelScroll</li>
+                    <li>paste</li>
+                    <li>pointercancel</li>
+                    <li>pointerdown</li>
+                    <li>pointerenter</li>
+                    <li>pointerleave</li>
+                    <li>pointermove</li>
+                    <li>pointerout</li>
+                    <li>pointerover</li>
+                    <li>pointerrawupdateExperimental</li>
+                    <li>pointerup</li>
+                    <li>scroll</li>
+                    <li>scrollend</li>
+                    <li>securitypolicyviolation</li>
+                    <li>touchcancel</li>
+                    <li>touchend</li>
+                    <li>touchmove</li>
+                    <li>touchstart</li>
+                    <li>transitioncancel</li>
+                    <li>transitionend</li>
+                    <li>transitionrun</li>
+                    <li>transitionstart</li>
+                    <li>webkitmouseforcechanged</li>
+                    <li>webkitmouseforcedown</li>
+                    <li>webkitmouseforceup</li>
+                    <li>webkitmouseforcewillbegin</li>
+                    <li>wheel</li>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+    <section class="testBox">
+        <div class="test" contenteditable="true">Test <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
+        <section><span class="drag">▶&nbsp;Drag</span></section>
+    </section>
+    <hr/>
+    <h6 data-ke-size="size16">Event, MDN, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element" target="_blank" rel="noopener&nbsp;noreferrer">https://developer.mozilla.org/en-US/docs/Web/API/Element</a></h6>
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+    $.fn.extend({ style: function (a) { return this.attr("style", a); } });
+    $.fn.extend({
+        flash: function (a) {
+            const time = 300;
+            return this.animate({ backgroundColor: "red" }, time, function () { $(this).animate({ backgroundColor: "transparent" }, time); });
+        }
+    });
+
+    //CSS
+    $(`.test`).style(`margin:10px;  border-radius: 3px;`);
+    $(`.test`).style(`border: 1px solid black; background-color: transparent; border-radius: 3px; width: 100vw; height: 200px; overflow: scroll;`);
+    $(`.event li`).style(`margin:0 20px;`);
+
+    $(`.drag`).on("click", function () { $(`.test`).draggable(); })
+
+
+    const eventElement = $(`.event li`);
+    for (let i = 0; i < eventElement.length; i++) {
+        const event = $(eventElement[i]).text();
+        $(`.test`).on(`${event}`, function () {
+            eventElement.filter(function () {return $(this).text() == event;})
+                        .finish()
+                        .flash();
+        })
+    }
+
+</script>

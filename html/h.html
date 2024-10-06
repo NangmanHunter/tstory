@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;h&gt;</title>
+</head>
+<body>
+    
+    <ul style="list-style-type: disc;" data-ke-list-type="disc">
+        <li>h</li>
+        <ul class="ul" style="display: grid; grid-template-columns: 1fr 1fr 1fr;" data-ke-list-type="disc">
+            <li>&lt;h1&gt;</li>
+            <li>&lt;h2&gt;</li>
+            <li>&lt;h3&gt;</li>
+            <li>&lt;h4&gt;</li>
+            <li>&lt;h5&gt;</li>
+            <li>&lt;h6&gt;</li>
+        </ul>
+    </ul>
+    <section style="display: flex; flex-direction: column; align-items: center; min-height: 500px;">
+        <h6><span>Heading-Elements,</span> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements</a></h6>
+        <h3 class="inner-side" data-ke-size="size23">&nbsp;</h3>
+        <h1 class="outer-side">&nbsp;</h1>
+    </section>
+
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+        
+    $(`.ul li`).style(`margin: 0 20px;`);
+    $(`.ul li`).on("mouseover", function(){
+        $(this).ff();
+        const tag=$(this).text().slice(1, -1);
+        const cod=`<${tag}>${tag}</${tag}>`;
+        $(`.inner-side`).text(cod);
+        $(`.outer-side`).html(cod);
+    })
+
+</script>

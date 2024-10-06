@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;li&gt;&lt;/li&gt;</title>
+</head>
+<body>
+    
+    <section style="display: grid; grid-template-columns: 400px 400px;">
+        <ul class="ul" style="list-style-type: disc;" data-ke-list-type="disc">
+            <li>&lt;li&gt;&lt;/li&gt;</li>
+            <li>&lt;li hidden&gt;&lt;/li&gt;</li>
+            <li>&lt;li style="display: none;"&gt;&lt;/li&gt;</li>
+            <li>&lt;li style="list-style-type: none;"&gt;&lt;/li&gt;</li>
+            <li>&lt;li style="visibility: hidden;"&gt;&lt;/li&gt;</li>
+        </ul>
+        <ul class="test" style="background-color: red; min-height: 0px;" data-ke-list-type="disc">
+            <li class="test-val" style="list-style-type: none;">code</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+        </ul>
+    </section>
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+    $(`.ul li`).mouseover(function(){
+        $(this).ff();
+
+        for(let i=0; i<$(`.test li`).length; i++){
+        if($($(`.test li`)[i]).text()==`` ){
+            $(`.test li`)[i].remove();
+        }
+
+        }
+
+        $(`.test-val`).text(`${$(this).text()}`);
+        $(`.test`).append(`${$(this).text()}`);
+
+    })
+
+
+</script>

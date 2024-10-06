@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input-type</title>
+</head>
+<body>
+    
+    <ul style="list-style-type: disc;" data-ke-list-type="disc">
+        <li>input</li>
+        <ul class="ul" style="list-style-type: disc;" data-ke-list-type="disc">
+            <li>button</li>
+            <li>checkbox</li>
+            <li>color</li>
+            <li>date</li>
+            <li>datetime-local</li>
+            <li>email</li>
+            <li>file</li>
+            <li>hidden</li>
+            <li>image</li>
+            <li>month</li>
+            <li>number</li>
+            <li>password</li>
+            <li>radio</li>
+            <li>range</li>
+            <li>reset</li>
+            <li>search</li>
+            <li>submit</li>
+            <li>tel</li>
+            <li>text</li>
+            <li>time</li>
+            <li>url</li>
+            <li>week</li>
+        </ul>
+    </ul>
+    <section style="display: flex; flex-direction: column; align-items: center; min-height: 200px;">
+        <h6>input-type, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button</a></h6>
+        <h1 class="html">&nbsp;</h1>
+        <input class="input" type="text" />
+    </section>
+
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+    $.fn.extend({ addStyle : function(a){ return this.attr("style", (this.attr("style")==undefined ? a : this.attr("style") + " " + a)); } });
+    $.fn.extend({ flash : function(a){ const time=100; return this.animate({ backgroundColor: "red" }, time, function(){ $(this).animate({ backgroundColor: "transparent" }, time); }); } });
+    $.fn.extend({ ff : function(a){ return this.finish().flash(); } });
+    $.fn.extend({ style : function(a){ return this.attr("style", a); } });
+
+    $(`.ul`)   .style(`display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;`);
+    $(`.ul li`).style(`margin: 0 20px;`)
+               .on   ("mouseover", function(){
+                            $(this).ff();
+                            const type=$(this).text();
+                            $(`.input`).attr("type",`${type}`);
+                            $(`.html`).text(`<input type="${type}">`);
+                        }
+                     )
+</script>
