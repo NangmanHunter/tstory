@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <div style="display: flex; justify-content: space-between;">
+  <div style="display: flex; justify-content: space-between; min-height: 500px;">
 
     <section style="display: grid; grid-template-columns: 300px 200px;">
       <ul class="ul">
@@ -36,7 +36,26 @@
 
 <style>
 
+.container_postbtn .postbtn_like{
 
+box-shadow: -10px 10px 10px black;
+background-color: black;
+border-radius: 0 !important;
+width: 150px;
+height: 100px;
+
+display: flex !important;
+justify-content: center;
+align-items: center;
+
+transform: scale(1.5) skewX(10deg);
+}
+.container_postbtn .postbtn_like:hover{
+transition-duration: 1s;
+transform: scale(1.5) rotateY(360deg) ;
+
+box-shadow: 10px 10px 10px black;
+}
 
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
