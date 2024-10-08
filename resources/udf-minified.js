@@ -4,6 +4,7 @@ $.fn.extend({ contentEditable       : function()       { return this.on("mousedo
 $.fn.extend({ cs                    : function(t)      { return this.click(function(){t.slideToggle(); }) } });
 $.fn.extend({ flash                 : function(a)      { const time=100; return this.animate({ backgroundColor: "red" }, time, function(){ $(this).animate({ backgroundColor: "transparent" }, time); }); } });
 $.fn.extend({ ff                    : function(a)      { return this.finish().flash(); } });
+$.fn.extend({ ld                    : function(f)      { return this.on(`load`, f) } });
 $.fn.extend({ pf                    : function(a, b)   { return this.parents(a).find(b); } });
 $.fn.extend({ pft                   : function(a, b, c){ return this.parents(a).find(b).text(c); } });
 $.fn.extend({ pfh                   : function(a, b, c){ return this.parents(a).find(b).html(c); } });
@@ -51,3 +52,13 @@ $.fn.extend({ toggleText            : function(a, b)   { return this.text(this.t
 $.fn.extend({ toggleTextRotate90    : function()       { const a0 = `display: inline-block; transition-duration: 100ms;`; const a = a0 + `transform: rotate(90deg);`; const b = a0 + `transform: rotate(0deg);`; return this.toggleStyle(a, b); }});
 $.fn.extend({ toggleTextRotate180   : function()       { const a0 = `display: inline-block; transition-duration: 100ms;`; const a = a0 + `transform: rotate(180deg);`; const b = a0 + `transform: rotate(0deg);`; return this.toggleStyle(a, b); }});
 $.fn.extend({ toggleTextRotateM180  : function()       { const a0 = `display: inline-block; transition-duration: 100ms;`; const a = a0 + `transform: rotate(-180deg);`; const b = a0 + `transform: rotate(0deg);`; return this.toggleStyle(a, b); }});
+
+
+
+
+// ** Parameter **
+//-----------------
+// a=``
+// t=$()
+// f=function(){}
+
