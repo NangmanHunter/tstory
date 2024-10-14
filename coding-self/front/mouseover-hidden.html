@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/uds.css">
+    <title>mouseover-hidden</title>
+
+
+</head>
+<body>
+
+    <main class="fb">
+        <section style="display: grid; grid-template-columns: 300px 300px; column-gap: 20px;">
+            <h1>Selected</h1>
+            <h1>&nbsp;</h1>
+            <ul class="mt">
+                <li>1 mouseover target</li>
+                <li>2 mouseover target</li>
+                <li>3 mouseover target</li>
+            </ul>
+
+            <ul class="ht">
+                <li>1 hidden target</li>
+                <li>2 hidden target</li>
+                <li>3 hidden target</li>
+            </ul>
+    
+        </section>
+    
+        <section style="display: grid; grid-template-columns: 300px 300px; column-gap: 20px;">
+            <h1>None</h1>
+            <h1>&nbsp;</h1>
+    
+            <ul class="mt-none">
+                <li>1 mouseover target</li>
+                <li>2 mouseover target</li>
+                <li>3 mouseover target</li>
+            </ul>
+        
+            <ul class="ht-none">
+                <li>1 hidden target</li>
+                <li>2 hidden target</li>
+                <li>3 hidden target</li>
+            </ul>
+    
+        </section>
+    </main>
+
+
+
+
+</body>
+
+</html>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+    integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
+<script src="../resources/udf-minified.js"></script>
+<script src="../resources/udc.js"></script>
+<script>
+
+    $(`head`).append(`
+<style>
+    :root{
+        --var: 1;
+    }
+
+    .mt>li,
+    .ht>li,
+    .mt-none>li,
+    .ht-none>li
+    {
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .mt>li:nth-child(1){ background-color: rgba(255, 255, 255, calc(var(--var)*0.7));}
+    .mt>li:nth-child(2){ background-color: rgba(255, 255, 255, calc(var(--var)*0.5));}
+    .mt>li:nth-child(3){ background-color: rgba(255, 255, 255, calc(var(--var)*0.3));}
+
+    .ht>li:nth-child(1){ background-color: rgba(255, 0, 0, calc(var(--var)*0.7));}
+    .ht>li:nth-child(2){ background-color: rgba(255, 0, 0, calc(var(--var)*0.5));}
+    .ht>li:nth-child(3){ background-color: rgba(255, 0, 0, calc(var(--var)*0.3));}
+
+
+    .mt-none>li:nth-child(1){ background-color: rgba(255, 255, 255, calc(var(--var)*0.7));}
+    .mt-none>li:nth-child(2){ background-color: rgba(255, 255, 255, calc(var(--var)*0.5));}
+    .mt-none>li:nth-child(3){ background-color: rgba(255, 255, 255, calc(var(--var)*0.3));}
+
+    .ht-none>li:nth-child(1){ background-color: rgba(255, 0, 0, calc(var(--var)*0.7));}
+    .ht-none>li:nth-child(2){ background-color: rgba(255, 0, 0, calc(var(--var)*0.5));}
+    .ht-none>li:nth-child(3){ background-color: rgba(255, 0, 0, calc(var(--var)*0.3));}
+
+</style>
+`);
+
+</script>
+
+<script>
+
+
+
+
+
+</script>

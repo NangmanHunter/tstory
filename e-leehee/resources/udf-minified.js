@@ -1,4 +1,4 @@
-//JQ
+//Method
 $.fn.extend({ addStyle              : function(a)      { return this.attr("style", (this.attr("style")==undefined ? a : this.attr("style") + " " + a)); } });
 $.fn.extend({ as                    : function(a)      { return this.attr("style", (this.attr("style")==undefined ? a : this.attr("style") + " " + a)); } });
 $.fn.extend({ contentEditable       : function()       { return this.on("mousedown", function () { $(this).attr("contenteditable", "true"); }).on("focusout",  function () { $(this).removeAttr("contenteditable"); }); } });
@@ -71,5 +71,16 @@ $.fn.extend({ toggleTextRotateM180  : function()       { const a0 = `display: in
 
 
 
-//JS
+//Funciton
+function hs(a){$(`head`).append(`<style>${a}</style>`)};
 
+
+
+
+
+
+
+// Method   : ●.★(●)
+// Function :   ★(●)
+//★-rename
+// ●-variable

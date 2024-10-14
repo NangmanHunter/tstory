@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>slideToggle-blockㆍnone</title>
+
+
+</head>
+<body>
+
+    <ul class="ul" style="display: grid; grid-template-columns: repeat(3, 100px); column-gap: 50px;">
+        <li style="list-style-type: none; font-weight: bold;">css</li>
+        <li style="grid-column: 2/-1; list-style-type: none; justify-self: center; font-weight: bold;">style</li>
+
+        <li style="list-style-type: '●';">block</li>
+        <li style="list-style-type: '▶';">none</li>
+        <li style="list-style-type: '▶';">``</li>
+        
+        <li style="list-style-type: '●';">none</li>
+        <li style="list-style-type: '▶';">block</li>
+        <li style="list-style-type: '▶';">none</li>
+
+    </ul>
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<link   rel="stylesheet" href="../resources/uds.css"        ></link>
+<script                  src ="../resources/udf-minified.js"></script>
+<script                  src ="../resources/udc.js"         ></script>
+<script>
+
+    $(`head`).append(`
+<style>
+    .ul li{ padding: 20px; border-radius: 5px; }
+
+    .red       { background-color: red;        }
+    .dodgerblue{ background-color: dodgerblue; }
+    .coral     { background-color: coral;      }
+
+</style>
+`);
+
+</script>
+
+<script>
+
+    for(let i=0 ; i<$(`.ul li`).length; i++){
+        $($(`.ul li`)[i]).text()==`block`? $($(`.ul li`)[i]).addClass(`red`):``;
+        $($(`.ul li`)[i]).text()==`none` ? $($(`.ul li`)[i]).addClass(`dodgerblue`):``;
+        $($(`.ul li`)[i]).text()=='``'     ? $($(`.ul li`)[i]).addClass(`coral`):``;
+    }
+
+</script>
