@@ -1,5 +1,14 @@
 
 //mouseover-hidden
+//style공통
+$(`head`).append(
+`<style>
+    .mt   { flex-shrink: 0;}
+    .mt li{ background-color: white; font-weight: bold; padding:10px; }
+    .ht   { flex: 1;                                                  }
+</style>`);
+    
+    
 //**select형
 $(`.ht>li`)      .prop(`hidden`, true );
 $($(`.ht>li`)[0]).prop(`hidden`, false);
@@ -35,5 +44,6 @@ for(let i=0; i<$(`.mt-none>li`).length; i++){
 //udc
 //user-defined-class
 //class정의형
-
-
+    
+    
+    
