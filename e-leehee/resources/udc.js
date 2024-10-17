@@ -1,3 +1,7 @@
+//udc
+//user-defined-class
+//class정의형
+
 
 //mouseover-hidden
 //style공통
@@ -40,10 +44,13 @@ for(let i=0; i<$(`.mt-none>li`).length; i++){
 
 
 
+//reference-a
+for(let i=0; i<$(`.rf-a>li:nth-child(2n)`).length; i++){
+    const a=$($(`.rf-a>li:nth-child(2n)`)[i]);
+    a.html(`<a href="${a.text()}">${a.text()}</a>`);
+}
 
-//udc
-//user-defined-class
-//class정의형
+
     
     
     
